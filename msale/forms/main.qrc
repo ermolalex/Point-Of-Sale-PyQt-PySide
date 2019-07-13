@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/bill_64px_grey.png</file>
+    <file>icons/coins_grey.png</file>
+    <file>icons/search_database_48px_grey.png</file>
+    <file>icons/dot_green.png</file>
+    <file>icons/dot_red.png</file>
+    <file>icons/help_64px_grey.png</file>
+    <file>icons/user_menu_64px_grey.png</file>
+    <file>icons/icons8_sell_52px.png</file>
+    <file>icons/move_by_trolley_52px_grey.png</file>
+    <file>icons/product_60px_grey.png</file>
+    <file>icons/sales_60px_grey.png</file>
+    <file>icons/settings_100px_grey.png</file>
+    <file>icons/home_48px_grey.png</file>
+    <file>icons/icons8_openvpn_96px.png</file>
+    <file>icons/add_shopping_cart_48px_gray.png</file>
+    <file>icons/user_male_circle_100px_pink.png</file>
+    <file>icons/menu_48px_white.png</file>
+    <file>icons/close_x_48px_white.png</file>
+    <file>icons/minimize_48px_white.png</file>
+  </qresource>
+</RCC>

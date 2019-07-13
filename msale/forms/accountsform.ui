@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AccountsForm</class>
+ <widget class="QWidget" name="AccountsForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>632</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>User Accounts Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+padding:0px;
+font:12px;
+background-color:rgb(54,54,54);
+color:white;
+}
+QPushButton#reloadAccountsBtn{
+background-color:#ff2ebd;
+border-radius:16px;
+}
+QPushButton#newAccountBtn{
+background-color:#009d73;
+border-radius:3px;
+}
+QPushButton#reloadAccountsBtn:hover{
+border:2px solid white;
+}
+QPushButton#newAccountBtn:hover{
+border:2px solid white;
+}
+QPushButton#reloadAccountsBtn:pressed{
+border:2px solid orange;
+}
+QPushButton#newAccountBtn:pressed{
+border:2px solid orange;
+}
+
+QPushButton#reloadcAccountsBtn{
+background-color:#ff2ebd;
+border-radius:16px;
+}
+QPushButton#newcAccountBtn{
+background-color:#009d73;
+border-radius:3px;
+}
+QPushButton#reloadcAccountsBtn:hover{
+border:2px solid white;
+}
+QPushButton#newcAccountBtn:hover{
+border:2px solid white;
+}
+QPushButton#reloadcAccountsBtn:pressed{
+border:2px solid orange;
+}
+QPushButton#newcAccountBtn:pressed{
+border:2px solid orange;
+}
+
+
+
+
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>User Accounts </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="newAccountBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Create New User Account</string>
+         </property>
+         <property name="text">
+          <string>  Create New Account  </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="reloadAccountsBtn">
+         <property name="minimumSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Reload User Accounts</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="userAccountsScrollArea">
+       <property name="maximumSize">
+        <size>
+         <width>16777212</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>610</width>
+          <height>220</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="Line" name="line">
+     <property name="styleSheet">
+      <string notr="true">background-color:#dddddd;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Creditee Accounts </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="newcAccountBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Add New Creditee</string>
+         </property>
+         <property name="text">
+          <string>  Add New Creditee  </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="reloadcAccountsBtn">
+         <property name="minimumSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Reload Creditee Accounts</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="creditAccountsScrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>610</width>
+          <height>220</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
