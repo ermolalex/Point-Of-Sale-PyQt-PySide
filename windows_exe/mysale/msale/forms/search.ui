@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SearchForm</class>
+ <widget class="QWidget" name="SearchForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>626</width>
+    <height>454</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="BodyWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#BodyWidget{
+background-color:rgb(77,80,87);
+color: rgb(231, 231, 231);
+}
+
+QLabel,QLineEdit{
+color: rgb(231, 231, 231);
+}
+
+QLineEdit#SearchBox{
+background-color:Transparent;
+border:2px solid white;
+border-radius:10px;
+}
+
+QFrame#SearchFrame{
+border:2px solid grey;
+border-radius: 10px;
+background-color:Transparent;
+}
+
+QPushButton#SearchBtn{
+background-color:#00aa00;
+color:rgb(250,250,250);
+border-radius:10px;
+}
+QPushButton#SearchBtn:hover{
+background-color: rgb(0, 207, 0);
+}
+QPushButton#AddToTable{
+background-color:Transparent;
+color:rgb(250,250,250);
+border-radius:20px;
+}
+
+QPushButton#AddToTable:hover{
+background-color:orange;
+}
+
+QPushButton#CloseThis{
+background-color:Transparent;
+color:rgb(250,250,250);
+border-radius:20px;
+}
+
+QPushButton#CloseThis:hover{
+background-color:maroon;
+}
+
+QPushButton#SearchButton:hover{
+background-color: rgb(214, 209, 55);
+}
+
+QTableWidget{
+background-color: rgb(104, 104, 104);
+alternate-background-color: rgb(104, 104, 104);
+border-radius:10px;
+}
+
+</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QFrame" name="SearchFrame">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>72</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Search</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="SearchBox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="maxLength">
+            <number>45</number>
+           </property>
+           <property name="placeholderText">
+            <string>Enter Item Name to search</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="SearchBtn">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>:/icons/search_more_64_white.png</normaloff>:/icons/search_more_64_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="SearchTable">
+        <property name="minimumSize">
+         <size>
+          <width>608</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::ExtendedSelection</enum>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>150</number>
+        </attribute>
+        <attribute name="horizontalHeaderMinimumSectionSize">
+         <number>130</number>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Product Id</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="background">
+          <color>
+           <red>77</red>
+           <green>77</green>
+           <blue>77</blue>
+          </color>
+         </property>
+         <property name="foreground">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>57</red>
+            <green>115</green>
+            <blue>173</blue>
+           </color>
+          </brush>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Product Name</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="background">
+          <color>
+           <red>77</red>
+           <green>77</green>
+           <blue>77</blue>
+          </color>
+         </property>
+         <property name="foreground">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>57</red>
+            <green>115</green>
+            <blue>173</blue>
+           </color>
+          </brush>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Stock Quantity</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="background">
+          <color>
+           <red>76</red>
+           <green>76</green>
+           <blue>76</blue>
+          </color>
+         </property>
+         <property name="foreground">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>57</red>
+            <green>115</green>
+            <blue>173</blue>
+           </color>
+          </brush>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Selling Price</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="background">
+          <color>
+           <red>77</red>
+           <green>77</green>
+           <blue>77</blue>
+          </color>
+         </property>
+         <property name="foreground">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>57</red>
+            <green>115</green>
+            <blue>173</blue>
+           </color>
+          </brush>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="CloseThis">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(144, 48, 0);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/multiply_filled_100_white.png</normaloff>:/icons/multiply_filled_100_white.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="AddToTable">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/icons/add_shopping_cart_white.png</normaloff>:/icons/add_shopping_cart_white.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>25</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>SearchBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchForm</receiver>
+   <slot>advance_itemSearch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>582</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>-17</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SearchBox</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>SearchForm</receiver>
+   <slot>search()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CloseThis</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchForm</receiver>
+   <slot>closeWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>539</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>510</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AddToTable</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchForm</receiver>
+   <slot>add_toTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>585</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>587</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SearchBox</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>SearchForm</receiver>
+   <slot>advanced_itemSearch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>258</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>-23</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>advanced_itemSearch()</slot>
+  <slot>add_toTable()</slot>
+  <slot>closeWindow()</slot>
+  <slot>search()</slot>
+ </slots>
+</ui>
