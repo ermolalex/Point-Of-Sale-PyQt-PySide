@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets, QtCore, QtGui, uic
 
-#from msale.database import db
+from msale.database import db
+from msale.icons import resources
 
 class Ui_Search(QtWidgets.QWidget):
     def __init__(self):
@@ -16,21 +17,20 @@ class Ui_Search(QtWidgets.QWidget):
 
         #Load Ui
         self.widget = uic.loadUi("msale/forms/search.ui",self)
-
+        self.widget.SearchBox.textChanged.connect(self.search)
         #Insert Icons
-        self.widget.SearchBtn.setIcon(QtGui.QIcon("msale/icons/search_more_64_white.png"))
-        self.widget.CloseThis.setIcon(QtGui.QIcon("msale/icons/close_x_48px_white.png"))
-        self.widget.AddToTable.setIcon(QtGui.QIcon("msale/icons/add_shopping_cart_white.png"))
+        self.widget.SearchBtn.setIcon(QtGui.QIcon(":/icons/search_more_64_white.png"))
+        self.widget.CloseThis.setIcon(QtGui.QIcon(":/icons/close_x_48px_white.png"))
+        self.widget.AddToTable.setIcon(QtGui.QIcon(":/icons/add_shopping_cart_white.png"))
         self.widget.SearchTable.setColumnWidth(0,60)
         #Database
-        #self.mydb = db.Database().connect_db()
-        #self.cursor = self.mydb.cursor()
+        self.mydb = db.Database().connect_db()
+        self.cursor = self.mydb.cursor()
 
     @QtCore.pyqtSlot()
     def search(self):
         #Get text from search lineedit box and do a search in the database
-        pass
-        '''
+        
         searchText = self.widget.SearchBox.text()
         if len(searchText) == 0:
             self.widget.SearchTable.setRowCount(0)
@@ -61,7 +61,7 @@ class Ui_Search(QtWidgets.QWidget):
                     self.widget.SearchTable.setItem(x,3,QtWidgets.QTableWidgetItem(sp))
 
             except Exception as e1:
-                print(e1)'''
+                print(e1)
 
     @QtCore.pyqtSlot()
     def advance_itemSearch(self):
