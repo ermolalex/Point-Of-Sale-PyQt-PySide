@@ -9,7 +9,7 @@ class Database():
     def connect_db(self):
         self.connected = False
         try:
-            self.connection = psycopg2.connect(host = "localhost",  database = "mysale", user = "postgres_mysale", password = "postgresdb_mysale")#"8a603eee84d94fe0b83b678e80f0eede")
+            self.connection = psycopg2.connect(host = "localhost",  database = "mysale", user = "username", password = "password")
             self.cursor = self.connection.cursor()
             self.connected = True
             self.create_tables()
@@ -31,35 +31,7 @@ class Database():
         return self.connected
 
     def super_admin(self):
-        y = PasswordActions()
-        z = y.hash_password("E5HIQFSn")
-
-        admin_ = PasswordActions()
-        admin = admin_.hash_password("tenai1993")
-
-        try:
-            a = self.check_if_exists("user","username",'MySale')
-            b = self.check_if_exists("user","username",'Admin')
-            if a == True:
-                pass
-
-            else:
-                sql = """INSERT INTO "user"(firstname,lastname,gender,mobile_no,username,password,admin) \
-                    VALUES('Server','Admin',2,254711498039,'MySale','{}',3);""".format(z)
-                self.cursor.execute(sql)
-                self.connection.commit()
-
-            if b == True:
-                pass
-
-            else:
-                sql_admin = """INSERT INTO "user"(firstname,lastname,gender,mobile_no,username,password,admin) \
-                    VALUES('Admin','Admin',2,254711498039,'Admin','{}',3);""".format(admin)
-                self.cursor.execute(sql_admin)
-                self.connection.commit()
-
-        except Exception as a:
-            print(">> Error at super user: "+str(a))
+        pass
 
     def check_connection(self):
         return self.connected
@@ -180,7 +152,7 @@ class Database():
 
                 ''')
                 self.connection.commit()
-                self.super_admin()
+                #self.super_admin()
 
             except Exception as e:
                 print("Error Creating Tables :: "+str(e))
