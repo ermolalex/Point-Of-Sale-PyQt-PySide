@@ -108,31 +108,21 @@ font-weight:bold;
               </property>
               <property name="maximumSize">
                <size>
-                <width>81</width>
+                <width>300</width>
                 <height>81</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color:white;</string>
+              </property>
               <property name="text">
-               <string/>
+               <string>Edit Item Details</string>
               </property>
               <property name="iconSize">
                <size>
                 <width>50</width>
                 <height>50</height>
                </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_3">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Edit Item Details</string>
               </property>
              </widget>
             </item>
@@ -161,31 +151,21 @@ font-weight:bold;
               </property>
               <property name="maximumSize">
                <size>
-                <width>81</width>
+                <width>300</width>
                 <height>81</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
-               <string/>
+               <string>Add New Item</string>
               </property>
               <property name="iconSize">
                <size>
                 <width>50</width>
                 <height>50</height>
                </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_2">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Add New Item</string>
               </property>
              </widget>
             </item>
@@ -214,34 +194,21 @@ font-weight:bold;
               </property>
               <property name="maximumSize">
                <size>
-                <width>81</width>
+                <width>300</width>
                 <height>81</height>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="text">
-               <string/>
+               <string>View All Products</string>
               </property>
               <property name="iconSize">
                <size>
                 <width>50</width>
                 <height>50</height>
                </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>View All Products</string>
               </property>
              </widget>
             </item>
@@ -270,39 +237,21 @@ font-weight:bold;
               </property>
               <property name="maximumSize">
                <size>
-                <width>81</width>
+                <width>300</width>
                 <height>81</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
-               <string/>
+               <string>Delete Item</string>
               </property>
               <property name="iconSize">
                <size>
                 <width>50</width>
                 <height>50</height>
                </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_5">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-                <weight>75</weight>
-                <italic>false</italic>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Delete Item</string>
               </property>
              </widget>
             </item>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>UserForm</class>
- <widget class="QWidget" name="UserForm">
+ <class>CrediteeForm</class>
+ <widget class="QWidget" name="CrediteeForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -22,8 +22,13 @@
     <height>118</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>User Form</string>
+   <string>Creditee Form</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QFrame#userFrame{
@@ -61,9 +66,6 @@ QPushButton#userPicture{
 border:1px solid white;
 border-radius:50px;
 }
-QPushButton#userPicture:hover{
-border:2px solid white;
-}
 QPushButton#deleteUserBtn{
 background-color:red;
 border-radius:19px;
@@ -85,6 +87,30 @@ border:3px solid orange;
 }
 QPushButton#editUserBtn:pressed{
 background-color: rgba(0, 128, 0,190);
+border:3px solid orange;
+}
+
+QPushButton#repayBtn{
+border-radius:10px;
+background-color:transparent;
+border:1px dotted grey;
+}
+QPushButton#repayBtn:hover{
+border:2px solid white;
+}
+QPushButton#repayBtn:pressed{
+border:3px solid orange;
+}
+
+QPushButton#cleardebtBtn{
+border-radius:10px;
+background-color:transparent;
+border:1px dotted grey;
+}
+QPushButton#cleardebtBtn:hover{
+border:2px solid white;
+}
+QPushButton#cleardebtBtn:pressed{
 border:3px solid orange;
 }
 
@@ -130,7 +156,7 @@ border:3px solid orange;
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <layout class="QFormLayout" name="formLayout">
           <item row="0" column="0">
@@ -160,32 +186,6 @@ border:3px solid orange;
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="minimumSize">
-             <size>
-              <width>70</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(85, 0, 127);</string>
-            </property>
-            <property name="text">
-             <string>Username :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="usernameLabel">
-            <property name="text">
-             <string>My Username</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
            <widget class="QLabel" name="label_2">
             <property name="minimumSize">
              <size>
@@ -204,14 +204,14 @@ border:3px solid orange;
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="1" column="1">
            <widget class="QLabel" name="mobileNoLabel">
             <property name="text">
              <string>+254700000000</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="label_3">
             <property name="minimumSize">
              <size>
@@ -223,78 +223,175 @@ border:3px solid orange;
              <string notr="true">color: rgb(85, 0, 127);</string>
             </property>
             <property name="text">
-             <string>Role :</string>
+             <string>Debt Balance : </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="2" column="1">
            <widget class="QLabel" name="roleLabel">
             <property name="text">
-             <string>Manager</string>
+             <string>0.00</string>
             </property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="spacing">
-           <number>0</number>
-          </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QPushButton" name="editUserBtn">
+           <widget class="QPushButton" name="repayBtn">
             <property name="minimumSize">
              <size>
-              <width>40</width>
+              <width>45</width>
               <height>40</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
+              <width>45</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string>Repay Debt</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 127, 186);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="iconSize">
              <size>
-              <width>30</width>
-              <height>30</height>
+              <width>25</width>
+              <height>25</height>
              </size>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="deleteUserBtn">
+           <widget class="QPushButton" name="cleardebtBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="minimumSize">
              <size>
-              <width>40</width>
+              <width>45</width>
               <height>40</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
+              <width>45</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string>Waive All Debt</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 127, 186);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="iconSize">
              <size>
-              <width>30</width>
-              <height>30</height>
+              <width>25</width>
+              <height>25</height>
              </size>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="editUserBtn">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Edit Creditee Details</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 184, 89);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteUserBtn">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Delete Creditee Account and Debt</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(188, 62, 0);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

@@ -469,7 +469,7 @@ border-radius:20px;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="chequeBadgeLabel_5">
+                   <widget class="QLabel" name="chequebadgelbl">
                     <property name="minimumSize">
                      <size>
                       <width>40</width>
@@ -507,12 +507,12 @@ border-radius:20px;</string>
                      </size>
                     </property>
                     <property name="text">
-                     <string>Total Sales</string>
+                     <string>Cash-MPesa</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="totalsBadgeLabel">
+                   <widget class="QLabel" name="cashmpesaLbl">
                     <property name="minimumSize">
                      <size>
                       <width>40</width>
@@ -547,6 +547,9 @@ border-radius:20px;</string>
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
                <widget class="QWidget" name="widget_5" native="true">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -566,13 +569,15 @@ font-weight:bold;
 }
 QPushButton{
 font:12px &quot;MS Shell Dlg 2&quot;;
+border:1px solid grey;
+border-radius:3px;
 }
 
 QPushButton:hover{
-border:2px solid orange;
+border:2px solid white;
 }
 QPushButton:pressed{
-border:3px solid orange;
+border:3px solid grey;
 }</string>
                 </property>
                 <widget class="QLabel" name="label_7">
@@ -605,10 +610,13 @@ border:3px solid orange;
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_5">
                   <property name="spacing">
-                   <number>0</number>
+                   <number>3</number>
                   </property>
                   <item>
                    <widget class="QPushButton" name="switchUserBtn">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>150</width>
@@ -620,6 +628,9 @@ border:3px solid orange;
                       <width>200</width>
                       <height>50</height>
                      </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Switch User</string>
@@ -634,6 +645,9 @@ border:3px solid orange;
                   </item>
                   <item>
                    <widget class="QPushButton" name="logoutBtn">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>100</width>
@@ -645,6 +659,9 @@ border:3px solid orange;
                       <width>200</width>
                       <height>50</height>
                      </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Logout</string>
@@ -698,33 +715,27 @@ font-weight:bold;</string>
                   <string>Application Up Time</string>
                  </property>
                 </widget>
-                <widget class="QWidget" name="layoutWidget_2">
+                <widget class="QLabel" name="datetimeLbl">
                  <property name="geometry">
                   <rect>
-                   <x>70</x>
+                   <x>19</x>
                    <y>50</y>
-                   <width>146</width>
-                   <height>42</height>
+                   <width>251</width>
+                   <height>40</height>
                   </rect>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_4">
-                  <item>
-                   <widget class="QLabel" name="label_6">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>12:00:57</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <property name="minimumSize">
+                  <size>
+                   <width>200</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>12:00:57</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
                 </widget>
                </widget>
               </item>
@@ -769,6 +780,9 @@ border:3px solid orange;
                   </property>
                   <item>
                    <widget class="QPushButton" name="backupDbBtn">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>60</width>

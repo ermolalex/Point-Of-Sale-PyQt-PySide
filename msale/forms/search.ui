@@ -348,6 +348,9 @@ border-radius:10px;
             <pointsize>12</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(144, 48, 0);</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -365,6 +368,9 @@ border-radius:10px;
         </item>
         <item>
          <widget class="QPushButton" name="AddToTable">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="minimumSize">
            <size>
             <width>50</width>
@@ -398,9 +404,7 @@ border-radius:10px;
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../../Programming/python_ui/MS_POS/icons/resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>SearchBtn</sender>

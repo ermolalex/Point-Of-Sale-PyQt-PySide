@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
+   <string notr="true"> QWidget{
 font-size:12px Arial;
 margin:0px;
 padding:0px;
@@ -26,14 +26,12 @@ color:white;
 }
 QPushButton#CloseBtn{
 background-color:Transparent;
-image: url(:/icons/icons/close_x_48px_white.png);
 }
 QPushButton#CloseBtn:hover{
 background-color:#ff0814;
 }
 QPushButton#MinimizeBtn{
 background-color:Transparent;
-	image: url(:/icons/icons/minimize_48px_white.png);
 }
 QPushButton#MinimizeBtn:hover{
 background-color:#00b3ff;
@@ -42,6 +40,35 @@ QLabel#TitleLabel{
 font: 16pt ;
 color: rgb(202, 202, 202);
 background-color:Transparent
+}
+QPushButton#aboutBtn{
+background-color:Transparent;
+}
+QPushButton#helpBtn{
+background-color:Transparent;
+}
+QPushButton#aboutBtn:hover{
+background-color: rgb(28, 183, 255);
+}
+QPushButton#helpBtn:hover{
+background-color: rgb(28, 183, 255);
+}
+QPushButton#aboutBtn:pressed{
+background-color: rgba(28, 183, 255, 190);
+}
+QPushButton#helpBtn:pressed{
+background-color: rgba(28, 183, 255, 190);
+}
+
+QPushButton#notificationBtn{
+border:none;
+background-color:transparent;
+}
+QPushButton#notificationBtn:hover{
+border:2px solid white;
+}
+QPushButton#notificationBtn:pressed{
+border:3px solid grey;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -59,6 +86,9 @@ background-color:Transparent
         <width>16777215</width>
         <height>40</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="spacing">
@@ -103,11 +133,103 @@ background-color:Transparent
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>228</width>
+           <width>40</width>
            <height>20</height>
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="notificationBtn">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Open notifications</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="styleSheet">
+          <string notr="true">background-color:#c7c7c7;</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="helpBtn">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="aboutBtn">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="styleSheet">
+          <string notr="true">background-color:#c7c7c7;</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="MinimizeBtn">
@@ -173,7 +295,7 @@ background-color:rgb(50, 77, 194);
           <widget class="QWidget" name="LeftMenu" native="true">
            <property name="minimumSize">
             <size>
-             <width>130</width>
+             <width>150</width>
              <height>0</height>
             </size>
            </property>
@@ -287,7 +409,7 @@ border-radius:30px;
                  </size>
                 </property>
                 <property name="text">
-                 <string>MS POS</string>
+                 <string>(c)lalan-ke 2019</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -374,6 +496,32 @@ border-radius:30px;
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="SellMenu">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>47</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>   Sell</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>:/icons/icons/icons8_sell_52px.png</normaloff>:/icons/icons/icons8_sell_52px.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="StockMenu">
               <property name="minimumSize">
                <size>
@@ -426,7 +574,7 @@ border-radius:30px;
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="SellMenu">
+             <widget class="QPushButton" name="CreditsMenu">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -434,11 +582,11 @@ border-radius:30px;
                </size>
               </property>
               <property name="text">
-               <string>   Sell</string>
+               <string>   Credits &amp;&amp; Debts </string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>:/icons/icons/icons8_sell_52px.png</normaloff>:/icons/icons/icons8_sell_52px.png</iconset>
+                <normaloff>:/icons/icons/help_64px_grey.png</normaloff>:/icons/icons/help_64px_grey.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -478,6 +626,9 @@ border-radius:30px;
              </widget>
             </item>
             <item>
+             <widget class="QWidget" name="widget" native="true"/>
+            </item>
+            <item>
              <widget class="QPushButton" name="HelpMenu">
               <property name="minimumSize">
                <size>
@@ -502,9 +653,6 @@ border-radius:30px;
                <bool>true</bool>
               </property>
              </widget>
-            </item>
-            <item>
-             <widget class="QWidget" name="widget" native="true"/>
             </item>
             <item>
              <widget class="QPushButton" name="SettingsMenu">

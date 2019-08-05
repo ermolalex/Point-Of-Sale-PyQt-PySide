@@ -80,7 +80,11 @@ background-color:#00d500;
 }
 QLabel#Totalslabel{
 font:18px;}
-</string>
+QToolTip{
+background-color:black;
+border:1px solid grey;
+color:white;
+}</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -102,7 +106,7 @@ font:18px;}
          <widget class="QFrame" name="SearchFrame">
           <property name="minimumSize">
            <size>
-            <width>370</width>
+            <width>500</width>
             <height>70</height>
            </size>
           </property>
@@ -114,10 +118,10 @@ font:18px;}
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <widget class="QLineEdit" name="SearchLineEdit">
+            <widget class="QLineEdit" name="searchLE">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>300</width>
                <height>40</height>
               </size>
              </property>
@@ -139,12 +143,15 @@ font:18px;}
             <widget class="QPushButton" name="AddToCartBtn">
              <property name="minimumSize">
               <size>
-               <width>70</width>
+               <width>130</width>
                <height>40</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Add item To Cart</string>
+             </property>
              <property name="text">
-              <string>Add</string>
+              <string>Add To Cart (F5)</string>
              </property>
              <property name="icon">
               <iconset>
@@ -162,12 +169,12 @@ font:18px;}
             <widget class="QPushButton" name="SearchBtn">
              <property name="minimumSize">
               <size>
-               <width>40</width>
+               <width>90</width>
                <height>40</height>
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string>Search</string>
              </property>
              <property name="icon">
               <iconset>
@@ -209,7 +216,7 @@ color: rgb(191, 191, 191);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="TotalsLabel">
+         <widget class="QLabel" name="totalsLabel">
           <property name="minimumSize">
            <size>
             <width>50</width>
@@ -227,42 +234,42 @@ color: rgb(191, 191, 191);</string>
        </layout>
       </item>
       <item>
-       <widget class="QTreeWidget" name="sellTable">
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">padding:0px;</string>
         </property>
-        <attribute name="headerDefaultSectionSize">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
          <number>150</number>
         </attribute>
-        <attribute name="headerMinimumSectionSize">
+        <attribute name="horizontalHeaderMinimumSectionSize">
          <number>40</number>
         </attribute>
-        <column>
-         <property name="text">
-          <string>Product Id</string>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="background">
-          <color>
-           <red>77</red>
-           <green>77</green>
-           <blue>77</blue>
-          </color>
-         </property>
-         <property name="foreground">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>57</red>
-            <green>115</green>
-            <blue>173</blue>
-           </color>
-          </brush>
-         </property>
-        </column>
+        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>40</number>
+        </attribute>
+        <attribute name="verticalHeaderMinimumSectionSize">
+         <number>40</number>
+        </attribute>
         <column>
          <property name="text">
           <string>Product Name</string>
@@ -274,17 +281,17 @@ color: rgb(191, 191, 191);</string>
          </property>
          <property name="background">
           <color>
-           <red>77</red>
-           <green>77</green>
-           <blue>77</blue>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
           </color>
          </property>
          <property name="foreground">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>57</red>
-            <green>115</green>
-            <blue>173</blue>
+            <red>70</red>
+            <green>70</green>
+            <blue>70</blue>
            </color>
           </brush>
          </property>
@@ -300,17 +307,17 @@ color: rgb(191, 191, 191);</string>
          </property>
          <property name="background">
           <color>
-           <red>77</red>
-           <green>77</green>
-           <blue>77</blue>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
           </color>
          </property>
          <property name="foreground">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>57</red>
-            <green>115</green>
-            <blue>173</blue>
+            <red>70</red>
+            <green>70</green>
+            <blue>70</blue>
            </color>
           </brush>
          </property>
@@ -326,24 +333,24 @@ color: rgb(191, 191, 191);</string>
          </property>
          <property name="background">
           <color>
-           <red>77</red>
-           <green>77</green>
-           <blue>77</blue>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
           </color>
          </property>
          <property name="foreground">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>57</red>
-            <green>115</green>
-            <blue>173</blue>
+            <red>70</red>
+            <green>70</green>
+            <blue>70</blue>
            </color>
           </brush>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Sub Total</string>
+          <string>Action</string>
          </property>
          <property name="font">
           <font>
@@ -352,17 +359,43 @@ color: rgb(191, 191, 191);</string>
          </property>
          <property name="background">
           <color>
-           <red>77</red>
-           <green>77</green>
-           <blue>77</blue>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
           </color>
          </property>
          <property name="foreground">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>57</red>
-            <green>115</green>
-            <blue>173</blue>
+            <red>70</red>
+            <green>70</green>
+            <blue>70</blue>
+           </color>
+          </brush>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Sub-Total</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="background">
+          <color>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
+          </color>
+         </property>
+         <property name="foreground">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>70</red>
+            <green>70</green>
+            <blue>70</blue>
            </color>
           </brush>
          </property>
@@ -407,21 +440,26 @@ color: rgb(191, 191, 191);</string>
                <height>35</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Cash Payment</string>
              </property>
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QPushButton" name="PayOptionBtn">
+            <widget class="QPushButton" name="payoptionBtn">
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>35</height>
+               <height>40</height>
               </size>
              </property>
              <property name="text">
-              <string>Choose other payment</string>
+              <string>Choose other payment (F6)</string>
              </property>
              <property name="icon">
               <iconset>
@@ -443,18 +481,28 @@ color: rgb(191, 191, 191);</string>
                <height>35</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Amount Paid</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QLineEdit" name="CashAmountLineEdit">
+            <widget class="QLineEdit" name="cashamountLE">
              <property name="minimumSize">
               <size>
                <width>0</width>
                <height>40</height>
               </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
              </property>
              <property name="placeholderText">
               <string>Enter Amount Paid</string>
@@ -469,18 +517,28 @@ color: rgb(191, 191, 191);</string>
                <height>35</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Change</string>
              </property>
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QLineEdit" name="ChangeAmountLineEdit">
+            <widget class="QLineEdit" name="changeamountLE">
              <property name="minimumSize">
               <size>
                <width>0</width>
                <height>40</height>
               </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -491,7 +549,7 @@ color: rgb(191, 191, 191);</string>
             </widget>
            </item>
            <item row="3" column="1">
-            <widget class="QPushButton" name="CashPaymentBtn">
+            <widget class="QPushButton" name="cashpaymentBtn">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -499,7 +557,7 @@ color: rgb(191, 191, 191);</string>
               </size>
              </property>
              <property name="text">
-              <string>Complete Transaction</string>
+              <string>Complete Transaction (F7)</string>
              </property>
              <property name="icon">
               <iconset>
@@ -510,6 +568,12 @@ color: rgb(191, 191, 191);</string>
                <width>18</width>
                <height>18</height>
               </size>
+             </property>
+             <property name="autoDefault">
+              <bool>true</bool>
+             </property>
+             <property name="default">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
